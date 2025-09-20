@@ -3,17 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Weather App</title>
+    <title>WeatherPro - Professional Weather App</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   </head>
   <body>
-    <div class="weather-app">
-      <h1>Weather Checker</h1>
-      <div class="weather-form">
-        <input type="text" id="cityInput" placeholder="Enter city name" />
-        <button id="getWeatherBtn">Get Weather</button>
-      </div>
-      <div id="weatherResult" class="weather-result"></div>
+    <div class="background-animation"></div>
+    <div class="container">
+      <header class="app-header">
+        <i class="fas fa-cloud-sun weather-icon-header"></i>
+        <h1>WeatherPro</h1>
+        <p class="subtitle">Your professional weather companion</p>
+      </header>
+      
+      <main class="weather-app">
+        <div class="search-section">
+          <div class="input-group">
+            <i class="fas fa-search search-icon"></i>
+            <input 
+              type="text" 
+              id="cityInput" 
+              placeholder="Enter city name..." 
+              aria-label="City name"
+              autocomplete="off"
+            />
+            <button id="getWeatherBtn" class="search-btn" aria-label="Get weather">
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="loading-spinner" id="loadingSpinner" style="display: none;">
+          <div class="spinner"></div>
+          <p>Fetching weather data...</p>
+        </div>
+
+        <div id="weatherResult" class="weather-result">
+          <div class="welcome-message">
+            <i class="fas fa-info-circle"></i>
+            <p>Enter a city name to get current weather information</p>
+          </div>
+        </div>
+
+        <div class="popular-cities">
+          <h3>Popular Cities</h3>
+          <div class="city-tags">
+            <button class="city-tag" data-city="New York">New York</button>
+            <button class="city-tag" data-city="London">London</button>
+            <button class="city-tag" data-city="Paris">Paris</button>
+            <button class="city-tag" data-city="Tokyo">Tokyo</button>
+            <button class="city-tag" data-city="Mumbai">Mumbai</button>
+          </div>
+        </div>
+      </main>
+
+      <footer class="app-footer">
+        <p>&copy; 2024 WeatherPro. Built with modern web technologies.</p>
+      </footer>
     </div>
     <script src="script.js"></script>
   </body>
